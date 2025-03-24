@@ -64,7 +64,9 @@ Nous mettons un point d'honneur à livrer des projets **clés en main**, perform
 ## 📞 Contactez-nous
 
 💬 **Discord** : [Rejoindre notre serveur](https://discord.gg/TON-LIEN](https://discord.gg/dXZtJjeVmK)
+
 🌍 **Site web** : [majstudio.com](http://213.190.4.85:4050)
+
 📧 **Email** : maxilol2610.coding@gmail.com
 
 Besoin d'un projet sur mesure ? **Nous sommes là pour vous aider !**
