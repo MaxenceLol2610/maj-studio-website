@@ -1,69 +1,76 @@
-# Welcome to your Lovable project
+<div align="center">
+  <img src="URL_DU_LOGO" alt="Maj Studio Logo" width="200">
+  <h1>🚀 Maj Studio – L'innovation au service du développement</h1>
+  <blockquote><strong>Transformons vos idées en solutions numériques sur mesure.</strong></blockquote>
 
-## Project info
+  ![GitHub Repo Size](https://img.shields.io/github/repo-size/MaxenceLol2610/maj-studio-website?color=blue&label=Taille%20du%20repo)
+  ![GitHub Stars](https://img.shields.io/github/stars/MaxenceLol2610/maj-studio-website?style=social)
+  ![Statut](https://img.shields.io/website?url=https%3A%2F%2Fmajstudio.com)
 
-**URL**: https://lovable.dev/projects/322bf75a-3155-486c-8657-8b17a5d10156
+  <a href="http://213.190.4.85:4050"><img src="https://img.shields.io/badge/%F0%9F%8C%90%20Visiter%20le%20site-Maj%20Studio-blue?style=for-the-badge" alt="Visiter Maj Studio"></a>
+</div>
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🌟 Qui sommes-nous ?
 
-**Use Lovable**
+Chez **Maj Studio**, nous sommes bien plus qu'une simple équipe de développeurs. Nous sommes des artisans du numérique, passionnés par la transformation de vos idées en réalités tangibles. De la conception de **sites web captivants** à la création de **bots Discord intelligents**, en passant par des **plugins Minecraft innovants** et des **logiciels sur mesure**, nous mettons tout notre savoir-faire à votre service.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/322bf75a-3155-486c-8657-8b17a5d10156) and start prompting.
+🔹 **Solutions innovantes** : Chaque projet est une opportunité d'innover et de repousser les limites.
+🔹 **Développement soigné** : Nous prêtons une attention méticuleuse aux détails pour des performances optimales.
+🔹 **Équipe passionnée** : Nous sommes toujours à l'écoute, prêts à relever de nouveaux défis avec enthousiasme.
 
-Changes made via Lovable will be committed automatically to this repo.
+> 🏆 *Notre objectif ? Donner vie à vos projets avec efficacité et professionnalisme.*
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🚀 Nos services
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 🌐 Développement Web
+✨ **Sites vitrines** : Faites une première impression inoubliable avec un site élégant et fonctionnel.
+✨ **Applications web** : Offrez des expériences interactives et intuitives à vos utilisateurs.
+✨ **Hébergement et maintenance** : Un service complet pour votre tranquillité d'esprit.
 
-Follow these steps:
+### 🤖 Bots Discord
+⚡ **Automatisation avancée** : Simplifiez vos tâches quotidiennes grâce à des automatisations intelligentes.
+⚡ **Modération et interactions** : Créez une communauté dynamique et sécurisée.
+⚡ **Intégrations API** : Des fonctionnalités sur mesure pour répondre à vos besoins spécifiques.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### 🎮 Plugins Minecraft
+🛠️ **Plugins personnalisés** : Enrichissez l'expérience de jeu de vos utilisateurs avec des fonctionnalités uniques.
+🛠️ **Compatibilité multi-versions** : Une performance optimale, quelle que soit la version du jeu.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 🖥️ Logiciels
+📌 **Applications bureautiques** : Optimisez votre productivité avec des outils adaptés à vos besoins.
+📌 **Outils de gestion** : Simplifiez la gestion de vos projets grâce à des interfaces intuitives.
+📌 **Interfaces intuitives** : Une ergonomie pensée pour l'utilisateur, pour une expérience fluide.
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## 💡 Pourquoi choisir Maj Studio ?
 
-**Edit a file directly in GitHub**
+✅ **Expertise polyvalente** : Nous maîtrisons plusieurs domaines du développement pour répondre à tous vos besoins.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+✅ **Solutions adaptées** : Chaque projet est unique, nous le traitons avec soin et attention.
 
-**Use GitHub Codespaces**
+✅ **Service client réactif** : Assistance et accompagnement personnalisés pour une collaboration fluide.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+✅ **Tarifs transparents** : Des prestations de qualité à des prix compétitifs.
 
-## What technologies are used for this project?
+Nous mettons un point d'honneur à livrer des projets **clés en main**, performants et évolutifs.
 
-This project is built with .
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📞 Contactez-nous
 
-## How can I deploy this project?
+💬 **Discord** : [Rejoindre notre serveur](https://discord.gg/TON-LIEN](https://discord.gg/dXZtJjeVmK)
+🌍 **Site web** : [majstudio.com](http://213.190.4.85:4050)
+📧 **Email** : maxilol2610.coding@gmail.com
 
-Simply open [Lovable](https://lovable.dev/projects/322bf75a-3155-486c-8657-8b17a5d10156) and click on Share -> Publish.
+Besoin d'un projet sur mesure ? **Nous sommes là pour vous aider !**
 
-## I want to use a custom domain - is that possible?
+---
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+<div align="center">
+  <strong>💻 Maj Studio – Créons ensemble l’avenir du numérique.</strong>
+</div>
