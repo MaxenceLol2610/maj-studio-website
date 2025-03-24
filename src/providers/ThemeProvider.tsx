@@ -34,23 +34,28 @@ export function ThemeProvider({
   useEffect(() => {
     const root = window.document.documentElement;
     
-    // Add transition class before changing to enable smooth transitions
-    root.classList.add('theme-transition');
+    // First add the fade-out class to animate out the current theme
+    root.classList.add('theme-fade-out');
     
-    // Remove light/dark class and add the new theme
-    root.classList.remove("light", "dark");
-    root.classList.add(theme);
+    // After a short delay, change the theme and animate in
+    setTimeout(() => {
+      // Remove the previous theme class
+      root.classList.remove("light", "dark");
+      // Add the new theme class
+      root.classList.add(theme);
+      // Save the theme in localStorage
+      localStorage.setItem(storageKey, theme);
+      
+      // Remove fade-out and add fade-in
+      root.classList.remove('theme-fade-out');
+      root.classList.add('theme-fade-in');
+      
+      // Remove the fade-in class after animation completes
+      setTimeout(() => {
+        root.classList.remove('theme-fade-in');
+      }, 500);
+    }, 150); // Short delay for fade-out before changing theme
     
-    // Save the theme in localStorage
-    localStorage.setItem(storageKey, theme);
-    
-    // Remove transition class after a moment to prevent transitions
-    // when not changing the theme
-    const transitionTimeout = setTimeout(() => {
-      root.classList.remove('theme-transition');
-    }, 500);
-    
-    return () => clearTimeout(transitionTimeout);
   }, [theme, storageKey]);
 
   const value = {
