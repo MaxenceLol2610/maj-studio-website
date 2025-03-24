@@ -1,12 +1,53 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import Services from '../components/Services';
+import Pricing from '../components/Pricing';
+import About from '../components/About';
+import Contact from '../components/Contact';
+import Footer from '../components/Footer';
 
 const Index = () => {
+  // Animation d'apparition des éléments au défilement
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1,
+      }
+    );
+
+    // Sélectionner tous les éléments qui doivent avoir une animation
+    const animatedElements = document.querySelectorAll('.card-hover, .glass');
+    animatedElements.forEach((el) => {
+      observer.observe(el);
+    });
+
+    return () => {
+      animatedElements.forEach((el) => {
+        observer.unobserve(el);
+      });
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <Hero />
+      <Services />
+      <Pricing />
+      <About />
+      <Contact />
+      <Footer />
     </div>
   );
 };
