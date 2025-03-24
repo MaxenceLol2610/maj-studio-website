@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Discord, Mail, ArrowRight } from 'lucide-react';
+import { MessageSquare, Mail, ArrowRight } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -17,7 +17,7 @@ const Contact = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white rounded-xl shadow-soft p-8 text-center fade-in-up">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Discord className="w-8 h-8 text-primary" />
+                <MessageSquare className="w-8 h-8 text-primary" />
               </div>
               <h3 className="text-xl font-sora font-semibold mb-3">
                 Rejoignez Notre Discord
