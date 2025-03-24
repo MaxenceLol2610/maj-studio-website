@@ -38,10 +38,10 @@ const services = [
 const ServiceCard = ({ service, index }: { service: typeof services[0], index: number }) => {
   return (
     <div 
-      className="bg-white rounded-xl shadow-soft p-6 card-hover"
+      className="bg-white dark:bg-card rounded-xl shadow-soft p-6 card-hover"
       style={{ animationDelay: `${index * 0.1}s` }}
     >
-      <div className="mb-6 bg-primary/10 w-16 h-16 rounded-lg flex items-center justify-center">
+      <div className="mb-6 bg-primary/10 dark:bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
         {service.icon}
       </div>
       <h3 className="text-xl font-sora font-semibold mb-3">{service.title}</h3>
@@ -71,7 +71,7 @@ const ServiceCard = ({ service, index }: { service: typeof services[0], index: n
 
 const Services = () => {
   return (
-    <section id="services" className="bg-muted/50 py-24">
+    <section id="services" className="bg-muted/50 dark:bg-muted/10 py-24">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="section-title">Nos Services</h2>

@@ -26,11 +26,11 @@ const team = [
 const TeamMember = ({ member, index }: { member: typeof team[0], index: number }) => {
   return (
     <div 
-      className="bg-white rounded-xl shadow-soft overflow-hidden fade-in"
+      className="bg-white dark:bg-card rounded-xl shadow-soft overflow-hidden fade-in"
       style={{ animationDelay: `${index * 0.2}s` }}
     >
-      <div className="bg-gradient-to-br from-primary/10 to-secondary/10 p-8 flex justify-center">
-        <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-md">
+      <div className="bg-gradient-to-br from-primary/10 to-secondary/10 dark:from-primary/5 dark:to-secondary/5 p-8 flex justify-center">
+        <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white dark:border-card shadow-md">
           <img 
             src={member.avatar} 
             alt={member.name} 
@@ -50,7 +50,7 @@ const TeamMember = ({ member, index }: { member: typeof team[0], index: number }
 
 const About = () => {
   return (
-    <section id="about" className="bg-muted/50 py-24">
+    <section id="about" className="bg-muted/50 dark:bg-muted/10 py-24">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="section-title">À Propos de Nous</h2>

@@ -15,8 +15,8 @@ const Contact = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-xl shadow-soft p-8 text-center fade-in-up">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="bg-white dark:bg-card rounded-xl shadow-soft p-8 text-center fade-in-up">
+              <div className="w-16 h-16 bg-primary/10 dark:bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6">
                 <MessageSquare className="w-8 h-8 text-primary" />
               </div>
               <h3 className="text-xl font-sora font-semibold mb-3">
@@ -37,8 +37,8 @@ const Contact = () => {
               </a>
             </div>
             
-            <div className="bg-white rounded-xl shadow-soft p-8 text-center fade-in-up" style={{ animationDelay: '0.2s' }}>
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="bg-white dark:bg-card rounded-xl shadow-soft p-8 text-center fade-in-up" style={{ animationDelay: '0.2s' }}>
+              <div className="w-16 h-16 bg-primary/10 dark:bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Mail className="w-8 h-8 text-primary" />
               </div>
               <h3 className="text-xl font-sora font-semibold mb-3">
@@ -51,13 +51,13 @@ const Contact = () => {
                 <input 
                   type="email" 
                   placeholder="Votre email" 
-                  className="w-full px-4 py-2 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  className="w-full px-4 py-2 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary/50 bg-background"
                   required
                 />
                 <textarea 
                   placeholder="Votre message" 
                   rows={4}
-                  className="w-full px-4 py-2 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  className="w-full px-4 py-2 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary/50 bg-background"
                   required
                 ></textarea>
                 <button 

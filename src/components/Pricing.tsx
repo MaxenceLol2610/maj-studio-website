@@ -85,13 +85,15 @@ const PricingCard = ({ plan, index }: { plan: typeof pricingPlans[0], index: num
     <div 
       className={`
         relative rounded-xl p-6 
-        ${isRecommended ? 'border-2 border-primary shadow-glow' : 'border border-border bg-white shadow-soft'} 
+        ${isRecommended 
+          ? 'border-2 border-primary shadow-glow' 
+          : 'border border-border bg-white dark:bg-card shadow-soft'} 
         flex flex-col h-full transition-all duration-300 hover:translate-y-[-5px] hover:shadow-md
       `}
       style={{ animationDelay: `${index * 0.1}s` }}
     >
       {isRecommended && (
-        <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white text-xs px-4 py-1 rounded-full font-medium">
+        <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground text-xs px-4 py-1 rounded-full font-medium">
           Recommandé
         </div>
       )}
@@ -123,7 +125,7 @@ const PricingCard = ({ plan, index }: { plan: typeof pricingPlans[0], index: num
           href="#contact"
           className={`block w-full py-2.5 px-4 rounded-lg text-center font-medium transition-colors ${
             isRecommended
-              ? 'bg-primary text-white hover:bg-primary/90'
+              ? 'bg-primary text-primary-foreground hover:bg-primary/90'
               : 'bg-muted text-foreground hover:bg-muted/80'
           }`}
         >
