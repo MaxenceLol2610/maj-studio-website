@@ -68,6 +68,15 @@
     --ring: 212 40% 90%;
   }
 
+  /* Add theme transition class for smooth theme changes */
+  .theme-transition {
+    transition: background-color 0.5s ease, 
+                color 0.5s ease, 
+                border-color 0.5s ease, 
+                fill 0.5s ease, 
+                stroke 0.5s ease;
+  }
+
   * {
     @apply border-border;
     scroll-behavior: smooth;
@@ -75,7 +84,6 @@
 
   body {
     @apply bg-background text-foreground font-inter antialiased;
-    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   /* Animation classes */
@@ -134,7 +142,7 @@
     }
   }
 
-  /* Glass effect */
+  /* Glass effect with dark mode support */
   .glass {
     @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-lg dark:bg-black/30 dark:border-white/10;
   }

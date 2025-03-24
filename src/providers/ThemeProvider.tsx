@@ -34,9 +34,23 @@ export function ThemeProvider({
   useEffect(() => {
     const root = window.document.documentElement;
     
+    // Add transition class before changing to enable smooth transitions
+    root.classList.add('theme-transition');
+    
+    // Remove light/dark class and add the new theme
     root.classList.remove("light", "dark");
     root.classList.add(theme);
+    
+    // Save the theme in localStorage
     localStorage.setItem(storageKey, theme);
+    
+    // Remove transition class after a moment to prevent transitions
+    // when not changing the theme
+    const transitionTimeout = setTimeout(() => {
+      root.classList.remove('theme-transition');
+    }, 500);
+    
+    return () => clearTimeout(transitionTimeout);
   }, [theme, storageKey]);
 
   const value = {
