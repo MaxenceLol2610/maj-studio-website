@@ -1,8 +1,10 @@
 
 import React, { useEffect, useRef } from 'react';
+import { useLanguage } from '@/providers/LanguageProvider';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -48,31 +50,30 @@ const Hero = () => {
         <div className="text-center">
           <div className="mb-4 inline-block">
             <span className="px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary">
-              Studio de Développement
+              {t('language') === 'en' ? 'Development Studio' : 'Studio de Développement'}
             </span>
           </div>
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-sora font-bold mb-6 tracking-tight fade-in-up">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-              Développement accessible
+              {t('hero.title').split(' ').slice(0, 2).join(' ')}
             </span>
             <br />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent">
-              pour tous
+              {t('hero.title').split(' ').slice(2).join(' ')}
             </span>
           </h1>
           
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8 fade-in">
-            Nous créons des applications web, des logiciels et des bots Discord sur mesure 
-            avec un engagement fort pour l'accessibilité et la qualité.
+            {t('hero.subtitle')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center fade-in">
             <a href="#contact" className="btn-primary">
-              Nous Contacter
+              {t('hero.secondary-cta')}
             </a>
             <a href="#services" className="btn-outline">
-              Découvrir Nos Services
+              {t('hero.cta')}
             </a>
           </div>
         </div>
@@ -82,9 +83,13 @@ const Hero = () => {
           <div className="glass rounded-2xl shadow-soft overflow-hidden aspect-video fade-in">
             <div className="w-full h-full bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 flex items-center justify-center">
               <p className="text-xl font-sora font-medium text-center px-8">
-                Solutions personnalisées pour vos projets <br />
+                {t('language') === 'en' 
+                  ? 'Customized solutions for your projects' 
+                  : 'Solutions personnalisées pour vos projets'} <br />
                 <span className="text-primary font-bold">
-                  Des sites web aux bots Discord
+                  {t('language') === 'en' 
+                    ? 'From websites to Discord bots' 
+                    : 'Des sites web aux bots Discord'}
                 </span>
               </p>
             </div>
