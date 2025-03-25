@@ -2,11 +2,13 @@
 import React, { useEffect, useState } from 'react';
 import { LoaderCircle } from 'lucide-react';
 import { useTheme } from '@/providers/ThemeProvider';
+import { useLanguage } from '@/providers/LanguageProvider';
 
 const PreLoader = () => {
   const [loading, setLoading] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
   const { theme } = useTheme();
+  const { t } = useLanguage();
 
   useEffect(() => {
     // Start fade out after 1.2 seconds
@@ -42,7 +44,7 @@ const PreLoader = () => {
           Maj Studio
         </div>
         <div className="mt-2 text-sm text-muted-foreground">
-          Loading...
+          {t('preloader.loading')}
         </div>
       </div>
     </div>
