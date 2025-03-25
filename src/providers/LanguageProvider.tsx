@@ -39,6 +39,9 @@ const translations: Record<Language, Record<string, string>> = {
     'services.discord.description': 'Custom bots to enhance your Discord server and engage your community.',
     'services.minecraft.title': 'Minecraft Plugins',
     'services.minecraft.description': 'Custom plugins to enhance your Minecraft server and provide unique features.',
+    'services.mobile.title': 'Mobile Apps',
+    'services.mobile.description': 'Native and hybrid applications for iOS and Android, with an optimal user experience.',
+    'services.learn_more': 'Learn more',
     
     // Pricing
     'pricing.title': 'Our Pricing',
@@ -95,6 +98,9 @@ const translations: Record<Language, Record<string, string>> = {
     'services.discord.description': 'Bots personnalisés pour améliorer votre serveur Discord et engager votre communauté.',
     'services.minecraft.title': 'Plugins Minecraft',
     'services.minecraft.description': 'Plugins personnalisés pour améliorer votre serveur Minecraft et offrir des fonctionnalités uniques.',
+    'services.mobile.title': 'Applications Mobiles',
+    'services.mobile.description': 'Applications natives et hybrides pour iOS et Android, avec une expérience utilisateur optimale.',
+    'services.learn_more': 'En savoir plus',
     
     // Pricing
     'pricing.title': 'Nos Forfaits',

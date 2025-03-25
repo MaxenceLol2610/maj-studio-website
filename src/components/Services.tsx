@@ -33,10 +33,8 @@ const Services = () => {
     },
     {
       icon: <Layers className="w-10 h-10 text-primary" />,
-      title: language === 'en' ? "Mobile Apps" : "Applications Mobiles",
-      description: language === 'en' 
-        ? "Native and hybrid applications for iOS and Android, with an optimal user experience."
-        : "Applications natives et hybrides pour iOS et Android, avec une expérience utilisateur optimale.",
+      title: t('services.mobile.title'),
+      description: t('services.mobile.description'),
       features: ["React Native", "Flutter", "iOS", "Android"]
     }
   ];
@@ -68,7 +66,7 @@ const Services = () => {
           href="#contact" 
           className="text-primary font-medium flex items-center group"
         >
-          {language === 'en' ? 'Learn more' : 'En savoir plus'}
+          {t('services.learn_more')}
           <ArrowRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
         </a>
       </div>
