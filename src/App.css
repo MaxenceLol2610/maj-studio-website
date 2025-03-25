@@ -52,3 +52,17 @@
 .theme-fade {
   transition: opacity 0.3s ease;
 }
+
+/* Preloader animations */
+@keyframes pulse-glow {
+  0%, 100% { 
+    filter: drop-shadow(0 0 5px rgba(89, 86, 213, 0.5));
+  }
+  50% { 
+    filter: drop-shadow(0 0 20px rgba(89, 86, 213, 0.8));
+  }
+}
+
+.preloader-pulse {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
