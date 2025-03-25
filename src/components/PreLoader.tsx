@@ -5,15 +5,24 @@ import { useTheme } from '@/providers/ThemeProvider';
 
 const PreLoader = () => {
   const [loading, setLoading] = useState(true);
+  const [fadeOut, setFadeOut] = useState(false);
   const { theme } = useTheme();
 
   useEffect(() => {
-    // Simulate loading time
-    const timer = setTimeout(() => {
+    // Start fade out after 1.2 seconds
+    const fadeTimer = setTimeout(() => {
+      setFadeOut(true);
+    }, 1200);
+    
+    // Remove completely after fade animation completes
+    const loadTimer = setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 1700); // 1200ms + 500ms for fade animation
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(loadTimer);
+    };
   }, []);
 
   if (!loading) return null;
@@ -21,19 +30,19 @@ const PreLoader = () => {
   return (
     <div 
       className={`fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-500 ${
-        loading ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        fadeOut ? 'opacity-0 pointer-events-none' : 'opacity-100'
       } ${theme === 'dark' ? 'bg-background' : 'bg-background'}`}
     >
       <div className="relative flex flex-col items-center">
         <LoaderCircle 
-          className="w-16 h-16 text-primary animate-spin" 
+          className="w-16 h-16 text-primary animate-spin preloader-pulse" 
           strokeWidth={1.5} 
         />
         <div className="mt-6 text-2xl font-sora font-semibold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
           Maj Studio
         </div>
         <div className="mt-2 text-sm text-muted-foreground">
-          Chargement en cours...
+          Loading...
         </div>
       </div>
     </div>

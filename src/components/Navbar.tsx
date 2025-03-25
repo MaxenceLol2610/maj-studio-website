@@ -2,10 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
+import LanguageSwitcher from './LanguageSwitcher';
+import { useLanguage } from '@/providers/LanguageProvider';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,20 +47,22 @@ const Navbar = () => {
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#accueil" className="link-underline font-medium">Accueil</a>
-          <a href="#services" className="link-underline font-medium">Services</a>
-          <a href="#forfaits" className="link-underline font-medium">Forfaits</a>
-          <a href="#about" className="link-underline font-medium">À Propos</a>
-          <a href="#contact" className="link-underline font-medium">Contact</a>
+          <a href="#accueil" className="link-underline font-medium">{t('nav.home')}</a>
+          <a href="#services" className="link-underline font-medium">{t('nav.services')}</a>
+          <a href="#forfaits" className="link-underline font-medium">{t('nav.pricing')}</a>
+          <a href="#about" className="link-underline font-medium">{t('nav.about')}</a>
+          <a href="#contact" className="link-underline font-medium">{t('nav.contact')}</a>
         </nav>
         
         <div className="hidden md:flex items-center space-x-4">
+          <LanguageSwitcher />
           <ThemeToggle />
-          <a href="#contact" className="btn-primary">Nous Contacter</a>
+          <a href="#contact" className="btn-primary">{t('nav.contact-us')}</a>
         </div>
         
         {/* Mobile Navigation Toggle */}
         <div className="md:hidden flex items-center space-x-4">
+          <LanguageSwitcher />
           <ThemeToggle />
           <button 
             className="text-foreground focus:outline-none" 
@@ -78,42 +83,42 @@ const Navbar = () => {
               className="font-medium py-2" 
               onClick={() => setMobileMenuOpen(false)}
             >
-              Accueil
+              {t('nav.home')}
             </a>
             <a 
               href="#services" 
               className="font-medium py-2" 
               onClick={() => setMobileMenuOpen(false)}
             >
-              Services
+              {t('nav.services')}
             </a>
             <a 
               href="#forfaits" 
               className="font-medium py-2" 
               onClick={() => setMobileMenuOpen(false)}
             >
-              Forfaits
+              {t('nav.pricing')}
             </a>
             <a 
               href="#about" 
               className="font-medium py-2" 
               onClick={() => setMobileMenuOpen(false)}
             >
-              À Propos
+              {t('nav.about')}
             </a>
             <a 
               href="#contact" 
               className="font-medium py-2" 
               onClick={() => setMobileMenuOpen(false)}
             >
-              Contact
+              {t('nav.contact')}
             </a>
             <a 
               href="#contact" 
               className="btn-primary w-full text-center" 
               onClick={() => setMobileMenuOpen(false)}
             >
-              Nous Contacter
+              {t('nav.contact-us')}
             </a>
           </nav>
         </div>

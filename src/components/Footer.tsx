@@ -1,8 +1,10 @@
 
 import React from 'react';
+import { useLanguage } from '@/providers/LanguageProvider';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
   
   return (
     <footer className="bg-muted py-12">
@@ -15,43 +17,47 @@ const Footer = () => {
               </span>
             </a>
             <p className="text-muted-foreground mb-4">
-              Solutions de développement accessibles et modernes pour tous vos projets.
+              {t('language') === 'en' 
+                ? 'Accessible and modern development solutions for all your projects.'
+                : 'Solutions de développement accessibles et modernes pour tous vos projets.'}
             </p>
           </div>
           
           <div>
-            <h4 className="font-sora font-semibold mb-4">Services</h4>
+            <h4 className="font-sora font-semibold mb-4">{t('nav.services')}</h4>
             <ul className="space-y-2">
-              <li><a href="#services" className="text-muted-foreground hover:text-primary">Développement Web</a></li>
-              <li><a href="#services" className="text-muted-foreground hover:text-primary">Logiciels</a></li>
-              <li><a href="#services" className="text-muted-foreground hover:text-primary">Bots Discord</a></li>
-              <li><a href="#services" className="text-muted-foreground hover:text-primary">Plugins Minecraft</a></li>
+              <li><a href="#services" className="text-muted-foreground hover:text-primary">{t('services.web.title')}</a></li>
+              <li><a href="#services" className="text-muted-foreground hover:text-primary">{t('services.software.title')}</a></li>
+              <li><a href="#services" className="text-muted-foreground hover:text-primary">{t('services.discord.title')}</a></li>
+              <li><a href="#services" className="text-muted-foreground hover:text-primary">{t('services.minecraft.title')}</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-sora font-semibold mb-4">Forfaits</h4>
+            <h4 className="font-sora font-semibold mb-4">{t('nav.pricing')}</h4>
             <ul className="space-y-2">
-              <li><a href="#forfaits" className="text-muted-foreground hover:text-primary">Basic</a></li>
-              <li><a href="#forfaits" className="text-muted-foreground hover:text-primary">Standard</a></li>
-              <li><a href="#forfaits" className="text-muted-foreground hover:text-primary">Premium</a></li>
-              <li><a href="#forfaits" className="text-muted-foreground hover:text-primary">Entreprise</a></li>
+              <li><a href="#forfaits" className="text-muted-foreground hover:text-primary">{t('pricing.basic.title')}</a></li>
+              <li><a href="#forfaits" className="text-muted-foreground hover:text-primary">{t('pricing.standard.title')}</a></li>
+              <li><a href="#forfaits" className="text-muted-foreground hover:text-primary">{t('pricing.premium.title')}</a></li>
+              <li><a href="#forfaits" className="text-muted-foreground hover:text-primary">{t('pricing.enterprise.title')}</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-sora font-semibold mb-4">Contacter</h4>
+            <h4 className="font-sora font-semibold mb-4">{t('nav.contact')}</h4>
             <ul className="space-y-2">
               <li><a href="#contact" className="text-muted-foreground hover:text-primary">Discord</a></li>
               <li><a href="#contact" className="text-muted-foreground hover:text-primary">Email</a></li>
-              <li><a href="#about" className="text-muted-foreground hover:text-primary">Notre Équipe</a></li>
+              <li><a href="#about" className="text-muted-foreground hover:text-primary">
+                {t('language') === 'en' ? 'Our Team' : 'Notre Équipe'}
+              </a></li>
             </ul>
           </div>
         </div>
         
         <div className="border-t border-border pt-8 text-center">
           <p className="text-muted-foreground">
-            © {currentYear} MAJ Studio. Tous droits réservés.
+            © {currentYear} MAJ Studio. {t('footer.rights')}
           </p>
         </div>
       </div>
