@@ -68,6 +68,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Footer
     'footer.rights': 'All rights reserved.',
+    'footer.description': 'Accessible and modern development solutions for all your projects.',
     
     // Preloader
     'preloader.loading': 'Loading...',
@@ -127,6 +128,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Footer
     'footer.rights': 'Tous droits réservés.',
+    'footer.description': 'Solutions de développement accessibles et modernes pour tous vos projets.',
     
     // Preloader
     'preloader.loading': 'Chargement en cours...',

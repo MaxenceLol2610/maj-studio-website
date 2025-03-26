@@ -19,7 +19,7 @@ const Footer = () => {
             <p className="text-muted-foreground mb-4">
               {t('language') === 'en' 
                 ? 'Accessible and modern development solutions for all your projects.'
-                : 'Solutions de développement accessibles et modernes pour tous vos projets.'}
+                : t('footer.description')}
             </p>
           </div>
           
