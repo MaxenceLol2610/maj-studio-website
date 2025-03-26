@@ -2,7 +2,7 @@
 import React from 'react';
 import { useLanguage } from '@/providers/LanguageProvider';
 import { Button } from '@/components/ui/button';
-import { Flag } from 'lucide-react';
+import { Globe } from 'lucide-react';
 
 const LanguageSwitcher = () => {
   const { language, setLanguage } = useLanguage();
@@ -21,11 +21,13 @@ const LanguageSwitcher = () => {
       className="relative"
       aria-label={`Switch to ${language === 'en' ? 'French' : 'English'}`}
     >
-      {language === 'en' ? (
-        <Flag className="h-[1.2rem] w-[1.2rem] text-blue-600" />
-      ) : (
-        <Flag className="h-[1.2rem] w-[1.2rem] text-red-600" />
-      )}
+      <Globe className="h-[1.2rem] w-[1.2rem]" />
+      <span className="absolute -bottom-0.5 right-0 text-[8px] font-semibold rounded-sm overflow-hidden">
+        {language === 'en' ? 
+          <span className="text-blue-600">🇫🇷</span> : 
+          <span className="text-red-600">🇬🇧</span>
+        }
+      </span>
     </Button>
   );
 };
