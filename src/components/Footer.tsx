@@ -1,10 +1,11 @@
 
 import React from 'react';
 import { useLanguage } from '@/providers/LanguageProvider';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   return (
     <footer className="bg-muted py-12">
@@ -17,9 +18,7 @@ const Footer = () => {
               </span>
             </a>
             <p className="text-muted-foreground mb-4">
-              {t('language') === 'en' 
-                ? 'Accessible and modern development solutions for all your projects.'
-                : t('footer.description')}
+              {t('footer.description')}
             </p>
           </div>
           
@@ -49,8 +48,14 @@ const Footer = () => {
               <li><a href="#contact" className="text-muted-foreground hover:text-primary">Discord</a></li>
               <li><a href="#contact" className="text-muted-foreground hover:text-primary">Email</a></li>
               <li><a href="#about" className="text-muted-foreground hover:text-primary">
-                {t('language') === 'en' ? 'Our Team' : 'Notre Équipe'}
+                {language === 'en' ? 'Our Team' : 'Notre Équipe'}
               </a></li>
+              <li><Link to="/privacy" className="text-muted-foreground hover:text-primary">
+                {language === 'en' ? 'Privacy Policy' : 'Politique de Confidentialité'}
+              </Link></li>
+              <li><Link to="/terms" className="text-muted-foreground hover:text-primary">
+                {language === 'en' ? 'Terms of Service' : 'Conditions d\'utilisation'}
+              </Link></li>
             </ul>
           </div>
         </div>
