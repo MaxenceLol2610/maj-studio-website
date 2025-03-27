@@ -72,7 +72,7 @@ const Contact = () => {
                 ></textarea>
                 <button 
                   type="submit" 
-                  className="btn-secondary w-full"
+                  className="w-full btn-secondary"
                 >
                   {language === 'en' ? 'Send' : 'Envoyer'}
                 </button>

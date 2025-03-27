@@ -8,35 +8,29 @@ const About = () => {
   // Les données de l'équipe
   const team = [
     {
-      name: "Alexandre",
-      role: language === 'en' ? "Front-end Developer" : "Développeur Front-end",
+      name: "Maxence",
+      grade: "Fondateur",
+      role: language === 'en' ? "Full Stack Developer" : "Développeur Full Stack",
       bio: language === 'en' 
-        ? "Expert in modern and accessible interfaces, with a passion for UX/UI and fluid animations."
-        : "Expert en interfaces modernes et accessibles, avec une passion pour l'UX/UI et les animations fluides.",
-      avatar: "/placeholder.svg" 
+        ? "Specialist in full UI/UX development and database management. I will build the best possible product that meets your needs."
+        : "Spécialiste du développement UI/UX et de la gestion de bases de données. Je construirai le meilleur produit possible qui répondra à vos besoins.",
+      avatar: "/maxence.webp" 
     },
     {
-      name: "Marc",
-      role: language === 'en' ? "Back-end Developer" : "Développeur Back-end",
+      name: "James",
+      grade: "Fondateur",
+      role: language === 'en' ? "Python Developer & UX Designer" : "Développeur Python & UX Designer",
       bio: language === 'en'
-        ? "Specialist in robust databases and APIs, with expertise in security and performance."
-        : "Spécialiste des bases de données et des API robustes, avec une forte expertise en sécurité et performances.",
-      avatar: "/placeholder.svg"
-    },
-    {
-      name: "Jules",
-      role: language === 'en' ? "Full-stack Developer" : "Développeur Full-stack",
-      bio: language === 'en'
-        ? "Versatile and creative, he excels in technology integration and solution optimization."
-        : "Polyvalent et créatif, il excelle dans l'intégration des technologies et l'optimisation des solutions.",
-      avatar: "/placeholder.svg"
+        ? "I develop advanced code in Python and Front-end. I make sites more practical and beautiful, with passion and perfectionism to create quality solutions."
+        : "Je développe du code avancé en Python et en Front-end. Je rends les sites plus pratiques et plus beaux, avec passion et perfectionnisme pour créer des solutions de qualité.",
+      avatar: "/jamesfrench.webp"
     }
   ];
 
   const TeamMember = ({ member, index }: { member: typeof team[0], index: number }) => {
     return (
       <div 
-        className="bg-white dark:bg-card rounded-xl shadow-soft overflow-hidden fade-in"
+        className="bg-white dark:bg-card rounded-xl shadow-soft overflow-hidden fade-in border-2 border-border"
         style={{ animationDelay: `${index * 0.2}s` }}
       >
         <div className="bg-gradient-to-br from-primary/10 to-secondary/10 dark:from-primary/5 dark:to-secondary/5 p-8 flex justify-center">
@@ -50,8 +44,13 @@ const About = () => {
         </div>
         
         <div className="p-6 text-center">
-          <h3 className="text-xl font-sora font-semibold">{member.name}</h3>
-          <p className="text-primary font-medium mb-4">{member.role}</p>
+          <div className="flex items-center justify-center gap-2">
+            <span className="px-3 py-1 bg-muted rounded-full text-sm font-medium text-muted-foreground">
+              {member.grade}
+            </span>
+            <h3 className="text-xl font-sora font-semibold">{member.name}</h3>
+          </div>
+          <p className="text-primary font-medium mb-4 mt-2">{member.role}</p>
           <p className="text-muted-foreground">{member.bio}</p>
         </div>
       </div>

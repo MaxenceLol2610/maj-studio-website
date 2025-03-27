@@ -42,7 +42,7 @@ const Services = () => {
   const ServiceCard = ({ service, index }: { service: typeof services[0], index: number }) => {
     return (
       <div 
-        className="bg-white dark:bg-card rounded-xl shadow-soft p-6 card-hover"
+        className="bg-white dark:bg-card rounded-xl shadow-soft p-6 card-hover border-2 border-border"
         style={{ animationDelay: `${index * 0.1}s` }}
       >
         <div className="mb-6 bg-primary/10 dark:bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">

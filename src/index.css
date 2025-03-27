@@ -26,7 +26,7 @@
     --accent-foreground: 0 0% 100%;
 
     --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 56%;
+    --muted-foreground: 213 9% 38%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
@@ -58,7 +58,7 @@
     --accent-foreground: 0 0% 100%;
 
     --muted: 217 32% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted-foreground: 214 10% 86%;
 
     --destructive: 0 62% 45%;
     --destructive-foreground: 210 40% 98%;
@@ -156,7 +156,7 @@
 
   /* Glass effect with dark mode support */
   .glass {
-    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-lg dark:bg-black/30 dark:border-white/10;
+    @apply bg-white/70 backdrop-blur-xl border-b border-white/20 shadow-lg dark:bg-black/30 dark:border-white/10;
   }
 
   .card-hover {
@@ -193,11 +193,11 @@
   }
   
   .btn-secondary {
-    @apply bg-secondary text-secondary-foreground px-5 py-2.5 rounded-lg font-medium transition-all hover:bg-secondary/90 active:scale-95 shadow-md hover:shadow-lg;
+    @apply bg-secondary text-primary-foreground px-5 py-2.5 rounded-lg font-medium transition-all hover:bg-secondary/90 active:scale-95 shadow-md hover:shadow-lg;
   }
   
   .btn-outline {
-    @apply border-2 border-primary text-primary px-5 py-2.5 rounded-lg font-medium transition-all hover:bg-primary/10 active:scale-95 dark:border-primary dark:text-primary;
+    @apply border-2 border-primary text-primary px-5 py-[8px] rounded-lg font-medium transition-all hover:bg-primary/10 active:scale-95 dark:border-primary dark:text-primary text-center;
   }
   
   .section-title {
