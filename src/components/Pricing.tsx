@@ -408,65 +408,87 @@ const Pricing = () => {
             </TabsList>
           </div>
           
-          <TabsContent 
-            value="websites" 
-            className="mt-0 transition-all duration-500 transform"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {websitePlans.map((plan, index) => (
-                <PricingCard key={index} plan={plan} index={index} />
-              ))}
-            </div>
-            <ExtrasSection 
-              extras={websiteExtras} 
-              title={language === 'en' ? 'Website Extras' : 'Options Supplémentaires'}
-            />
-          </TabsContent>
-          
-          <TabsContent 
-            value="apps" 
-            className="mt-0 transition-all duration-500 transform"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {appPlans.map((plan, index) => (
-                <PricingCard key={index} plan={plan} index={index} />
-              ))}
-            </div>
-            <ExtrasSection 
-              extras={appExtras} 
-              title={language === 'en' ? 'Mobile App Extras' : 'Options Supplémentaires'}
-            />
-          </TabsContent>
+          <div className="relative w-full overflow-hidden min-h-[650px]">
+            <TabsContent 
+              value="websites" 
+              className="w-full absolute transition-all duration-500 transform"
+              style={{
+                opacity: activeTab === "websites" ? 1 : 0,
+                transform: `translateX(${activeTab === "websites" ? 0 : activeTab === "apps" ? -100 : activeTab === "minecraft" ? -200 : -300}px)`,
+                pointerEvents: activeTab === "websites" ? "auto" : "none"
+              }}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {websitePlans.map((plan, index) => (
+                  <PricingCard key={index} plan={plan} index={index} />
+                ))}
+              </div>
+              <ExtrasSection 
+                extras={websiteExtras} 
+                title={language === 'en' ? 'Website Extras' : 'Options Supplémentaires'}
+              />
+            </TabsContent>
+            
+            <TabsContent 
+              value="apps" 
+              className="w-full absolute transition-all duration-500 transform"
+              style={{
+                opacity: activeTab === "apps" ? 1 : 0,
+                transform: `translateX(${activeTab === "apps" ? 0 : activeTab === "websites" ? 100 : activeTab === "minecraft" ? -100 : -200}px)`,
+                pointerEvents: activeTab === "apps" ? "auto" : "none"
+              }}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {appPlans.map((plan, index) => (
+                  <PricingCard key={index} plan={plan} index={index} />
+                ))}
+              </div>
+              <ExtrasSection 
+                extras={appExtras} 
+                title={language === 'en' ? 'Mobile App Extras' : 'Options Supplémentaires'}
+              />
+            </TabsContent>
 
-          <TabsContent 
-            value="minecraft" 
-            className="mt-0 transition-all duration-500 transform"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {minecraftPlans.map((plan, index) => (
-                <PricingCard key={index} plan={plan} index={index} />
-              ))}
-            </div>
-            <ExtrasSection 
-              extras={minecraftExtras} 
-              title={language === 'en' ? 'Minecraft Plugin Extras' : 'Options Supplémentaires'}
-            />
-          </TabsContent>
+            <TabsContent 
+              value="minecraft" 
+              className="w-full absolute transition-all duration-500 transform"
+              style={{
+                opacity: activeTab === "minecraft" ? 1 : 0,
+                transform: `translateX(${activeTab === "minecraft" ? 0 : activeTab === "websites" ? 200 : activeTab === "apps" ? 100 : -100}px)`,
+                pointerEvents: activeTab === "minecraft" ? "auto" : "none"
+              }}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {minecraftPlans.map((plan, index) => (
+                  <PricingCard key={index} plan={plan} index={index} />
+                ))}
+              </div>
+              <ExtrasSection 
+                extras={minecraftExtras} 
+                title={language === 'en' ? 'Minecraft Plugin Extras' : 'Options Supplémentaires'}
+              />
+            </TabsContent>
 
-          <TabsContent 
-            value="discord" 
-            className="mt-0 transition-all duration-500 transform"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {discordPlans.map((plan, index) => (
-                <PricingCard key={index} plan={plan} index={index} />
-              ))}
-            </div>
-            <ExtrasSection 
-              extras={discordExtras} 
-              title={language === 'en' ? 'Discord Bot Extras' : 'Options Supplémentaires'}
-            />
-          </TabsContent>
+            <TabsContent 
+              value="discord" 
+              className="w-full absolute transition-all duration-500 transform"
+              style={{
+                opacity: activeTab === "discord" ? 1 : 0,
+                transform: `translateX(${activeTab === "discord" ? 0 : activeTab === "websites" ? 300 : activeTab === "apps" ? 200 : 100}px)`,
+                pointerEvents: activeTab === "discord" ? "auto" : "none"
+              }}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {discordPlans.map((plan, index) => (
+                  <PricingCard key={index} plan={plan} index={index} />
+                ))}
+              </div>
+              <ExtrasSection 
+                extras={discordExtras} 
+                title={language === 'en' ? 'Discord Bot Extras' : 'Options Supplémentaires'}
+              />
+            </TabsContent>
+          </div>
         </Tabs>
         
         <div className="mt-16 text-center">
