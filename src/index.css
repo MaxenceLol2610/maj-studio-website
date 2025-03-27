@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -214,6 +215,24 @@
     width: 100%;
     left: 0;
     right: auto;
+  }
+
+  /* Tabs transitions */
+  [role="tabpanel"] {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  [data-state="active"] {
+    @apply opacity-100 transform translate-x-0;
+  }
+  
+  [data-state="inactive"] {
+    @apply absolute opacity-0 pointer-events-none;
+    transform: translateX(20px);
+  }
+  
+  .tab-content-container {
+    @apply min-h-[650px] sm:min-h-[600px] lg:min-h-[550px];
   }
 }
 

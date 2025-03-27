@@ -1,12 +1,13 @@
-
 import React, { useState } from 'react';
 import { CheckCircle, Globe, Smartphone, Bot, Gamepad2 } from 'lucide-react';
 import { useLanguage } from '@/providers/LanguageProvider';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Pricing = () => {
   const { t, language } = useLanguage();
   const [activeTab, setActiveTab] = useState<string>("websites");
+  const isMobile = useIsMobile();
 
   // Website pricing plans
   const websitePlans = [
@@ -388,37 +389,29 @@ const Pricing = () => {
         
         <Tabs defaultValue="websites" onValueChange={setActiveTab} className="w-full">
           <div className="flex justify-center mb-10">
-            <TabsList className="grid w-full max-w-md grid-cols-2 lg:grid-cols-4">
-              <TabsTrigger value="websites" className="flex items-center gap-2">
+            <TabsList className={`flex flex-wrap ${isMobile ? 'w-full' : 'grid w-full max-w-md grid-cols-2 lg:grid-cols-4'}`}>
+              <TabsTrigger value="websites" className="flex items-center gap-2 flex-1">
                 <Globe className="h-4 w-4" />
-                {language === 'en' ? 'Websites' : 'Sites Web'}
+                <span className={isMobile ? "hidden" : ""}>{language === 'en' ? 'Websites' : 'Sites Web'}</span>
               </TabsTrigger>
-              <TabsTrigger value="apps" className="flex items-center gap-2">
+              <TabsTrigger value="apps" className="flex items-center gap-2 flex-1">
                 <Smartphone className="h-4 w-4" />
-                {language === 'en' ? 'Mobile Apps' : 'Applications Mobiles'}
+                <span className={isMobile ? "hidden" : ""}>{language === 'en' ? 'Mobile Apps' : 'Applications Mobiles'}</span>
               </TabsTrigger>
-              <TabsTrigger value="minecraft" className="flex items-center gap-2">
+              <TabsTrigger value="minecraft" className="flex items-center gap-2 flex-1">
                 <Gamepad2 className="h-4 w-4" />
-                {language === 'en' ? 'Minecraft Plugins' : 'Plugins Minecraft'}
+                <span className={isMobile ? "hidden" : ""}>{language === 'en' ? 'Minecraft Plugins' : 'Plugins Minecraft'}</span>
               </TabsTrigger>
-              <TabsTrigger value="discord" className="flex items-center gap-2">
+              <TabsTrigger value="discord" className="flex items-center gap-2 flex-1">
                 <Bot className="h-4 w-4" />
-                {language === 'en' ? 'Discord Bots' : 'Bots Discord'}
+                <span className={isMobile ? "hidden" : ""}>{language === 'en' ? 'Discord Bots' : 'Bots Discord'}</span>
               </TabsTrigger>
             </TabsList>
           </div>
           
-          <div className="relative w-full overflow-hidden min-h-[650px]">
-            <TabsContent 
-              value="websites" 
-              className="w-full absolute transition-all duration-500 transform"
-              style={{
-                opacity: activeTab === "websites" ? 1 : 0,
-                transform: `translateX(${activeTab === "websites" ? 0 : activeTab === "apps" ? -100 : activeTab === "minecraft" ? -200 : -300}px)`,
-                pointerEvents: activeTab === "websites" ? "auto" : "none"
-              }}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="relative w-full overflow-hidden tab-content-container">
+            <TabsContent value="websites" className="fade-in">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
                 {websitePlans.map((plan, index) => (
                   <PricingCard key={index} plan={plan} index={index} />
                 ))}
@@ -429,16 +422,8 @@ const Pricing = () => {
               />
             </TabsContent>
             
-            <TabsContent 
-              value="apps" 
-              className="w-full absolute transition-all duration-500 transform"
-              style={{
-                opacity: activeTab === "apps" ? 1 : 0,
-                transform: `translateX(${activeTab === "apps" ? 0 : activeTab === "websites" ? 100 : activeTab === "minecraft" ? -100 : -200}px)`,
-                pointerEvents: activeTab === "apps" ? "auto" : "none"
-              }}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <TabsContent value="apps" className="fade-in">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
                 {appPlans.map((plan, index) => (
                   <PricingCard key={index} plan={plan} index={index} />
                 ))}
@@ -449,16 +434,8 @@ const Pricing = () => {
               />
             </TabsContent>
 
-            <TabsContent 
-              value="minecraft" 
-              className="w-full absolute transition-all duration-500 transform"
-              style={{
-                opacity: activeTab === "minecraft" ? 1 : 0,
-                transform: `translateX(${activeTab === "minecraft" ? 0 : activeTab === "websites" ? 200 : activeTab === "apps" ? 100 : -100}px)`,
-                pointerEvents: activeTab === "minecraft" ? "auto" : "none"
-              }}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <TabsContent value="minecraft" className="fade-in">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
                 {minecraftPlans.map((plan, index) => (
                   <PricingCard key={index} plan={plan} index={index} />
                 ))}
@@ -469,16 +446,8 @@ const Pricing = () => {
               />
             </TabsContent>
 
-            <TabsContent 
-              value="discord" 
-              className="w-full absolute transition-all duration-500 transform"
-              style={{
-                opacity: activeTab === "discord" ? 1 : 0,
-                transform: `translateX(${activeTab === "discord" ? 0 : activeTab === "websites" ? 300 : activeTab === "apps" ? 200 : 100}px)`,
-                pointerEvents: activeTab === "discord" ? "auto" : "none"
-              }}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <TabsContent value="discord" className="fade-in">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
                 {discordPlans.map((plan, index) => (
                   <PricingCard key={index} plan={plan} index={index} />
                 ))}
