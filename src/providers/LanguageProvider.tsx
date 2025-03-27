@@ -27,6 +27,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.subtitle': 'We create custom web applications, software, Discord bots, and Minecraft plugins that bring your vision to life.',
     'hero.cta': 'Our Services',
     'hero.secondary-cta': 'Contact Us',
+    'hero.studio': 'Development Studio',
     
     // Services
     'services.title': 'Our Services',
@@ -87,6 +88,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.subtitle': 'Nous créons des applications web, des logiciels, des bots Discord et des plugins Minecraft sur mesure qui donnent vie à votre vision.',
     'hero.cta': 'Nos Services',
     'hero.secondary-cta': 'Nous Contacter',
+    'hero.studio': 'Studio de Développement',
     
     // Services
     'services.title': 'Nos Services',

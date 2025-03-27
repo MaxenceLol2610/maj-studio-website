@@ -23,7 +23,7 @@ const LanguageSwitcher = () => {
     >
       <Globe className="h-[1.2rem] w-[1.2rem]" />
       <span className="text-xs font-medium">
-        {language === 'en' ? 'FR' : 'EN'}
+        {language === 'en' ? 'EN' : 'FR'}
       </span>
     </Button>
   );
