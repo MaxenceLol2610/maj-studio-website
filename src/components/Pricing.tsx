@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { CheckCircle, Globe, Smartphone } from 'lucide-react';
+import { CheckCircle, Globe, Smartphone, Bot, Gamepad2 } from 'lucide-react';
 import { useLanguage } from '@/providers/LanguageProvider';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -144,6 +144,140 @@ const Pricing = () => {
     }
   ];
 
+  // Minecraft plugin pricing plans
+  const minecraftPlans = [
+    {
+      name: language === 'en' ? "Basic Plugin" : "Plugin Basic",
+      price: "50€",
+      description: language === 'en' 
+        ? "Simple Minecraft plugins with basic functionality" 
+        : "Plugins Minecraft simples avec des fonctionnalités basiques",
+      features: [
+        language === 'en' ? "Basic Commands" : "Commandes basiques",
+        language === 'en' ? "Simple Events" : "Événements simples",
+        language === 'en' ? "Configuration Files" : "Fichiers de configuration",
+        language === 'en' ? "1 code revision" : "1 révision de code"
+      ],
+      recommended: false
+    },
+    {
+      name: language === 'en' ? "Standard Plugin" : "Plugin Standard",
+      price: "150€",
+      description: language === 'en' 
+        ? "More advanced plugins with custom events and permissions" 
+        : "Plugins plus avancés avec des événements personnalisés et des permissions",
+      features: [
+        language === 'en' ? "Advanced Commands" : "Commandes avancées",
+        language === 'en' ? "Custom Events" : "Événements personnalisés",
+        language === 'en' ? "Permission System" : "Système de permissions",
+        language === 'en' ? "Database Support" : "Support de base de données",
+        language === 'en' ? "3 code revisions" : "3 révisions de code"
+      ],
+      recommended: true
+    },
+    {
+      name: language === 'en' ? "Advanced Plugin" : "Plugin Avancé",
+      price: "400€",
+      description: language === 'en' 
+        ? "Feature-rich plugins with custom mechanics and UI elements" 
+        : "Plugins riches en fonctionnalités avec des mécaniques personnalisées et des éléments d'interface",
+      features: [
+        language === 'en' ? "Custom GUIs" : "Interfaces graphiques personnalisées",
+        language === 'en' ? "Custom Items" : "Objets personnalisés",
+        language === 'en' ? "Custom Mechanics" : "Mécaniques personnalisées",
+        language === 'en' ? "API Integration" : "Intégration API",
+        language === 'en' ? "Optimization" : "Optimisation",
+        language === 'en' ? "10 code revisions" : "10 révisions de code"
+      ],
+      recommended: false
+    },
+    {
+      name: language === 'en' ? "Custom Game Mode" : "Mode de Jeu Personnalisé",
+      price: "1200€",
+      description: language === 'en' 
+        ? "Complete custom game modes with unique mechanics and features" 
+        : "Modes de jeu complets personnalisés avec des mécaniques et fonctionnalités uniques",
+      features: [
+        language === 'en' ? "Complete Game Logic" : "Logique de jeu complète",
+        language === 'en' ? "World Generation" : "Génération de monde",
+        language === 'en' ? "Custom Entities" : "Entités personnalisées",
+        language === 'en' ? "Economy System" : "Système d'économie",
+        language === 'en' ? "Rank System" : "Système de rangs",
+        language === 'en' ? "Server Integration" : "Intégration de serveur",
+        language === 'en' ? "50 code revisions" : "50 révisions de code"
+      ],
+      recommended: false
+    }
+  ];
+
+  // Discord bot pricing plans
+  const discordPlans = [
+    {
+      name: language === 'en' ? "Basic Bot" : "Bot Basic",
+      price: "80€",
+      description: language === 'en' 
+        ? "Simple Discord bots with basic commands" 
+        : "Bots Discord simples avec des commandes basiques",
+      features: [
+        language === 'en' ? "Basic Commands" : "Commandes basiques",
+        language === 'en' ? "Role Management" : "Gestion des rôles",
+        language === 'en' ? "Moderation Tools" : "Outils de modération",
+        language === 'en' ? "1 code revision" : "1 révision de code"
+      ],
+      recommended: false
+    },
+    {
+      name: language === 'en' ? "Standard Bot" : "Bot Standard",
+      price: "200€",
+      description: language === 'en' 
+        ? "More advanced bots with custom commands and features" 
+        : "Bots plus avancés avec des commandes et fonctionnalités personnalisées",
+      features: [
+        language === 'en' ? "Custom Commands" : "Commandes personnalisées",
+        language === 'en' ? "Advanced Moderation" : "Modération avancée",
+        language === 'en' ? "Reaction Roles" : "Rôles par réaction",
+        language === 'en' ? "Welcome & Goodbye Messages" : "Messages de bienvenue et d'adieu",
+        language === 'en' ? "Logging Features" : "Fonctionnalités de journalisation",
+        language === 'en' ? "3 code revisions" : "3 révisions de code"
+      ],
+      recommended: true
+    },
+    {
+      name: language === 'en' ? "Advanced Bot" : "Bot Avancé",
+      price: "500€",
+      description: language === 'en' 
+        ? "Feature-rich bots with advanced features and integrations" 
+        : "Bots riches en fonctionnalités avec des fonctionnalités et intégrations avancées",
+      features: [
+        language === 'en' ? "Database Integration" : "Intégration de base de données",
+        language === 'en' ? "Web Dashboard" : "Tableau de bord web",
+        language === 'en' ? "Custom Embeds" : "Embeds personnalisés",
+        language === 'en' ? "Auto-moderation" : "Modération automatique",
+        language === 'en' ? "Voice Features" : "Fonctionnalités vocales",
+        language === 'en' ? "API Integration" : "Intégration API",
+        language === 'en' ? "10 code revisions" : "10 révisions de code"
+      ],
+      recommended: false
+    },
+    {
+      name: language === 'en' ? "Community Bot" : "Bot Communautaire",
+      price: "1100€",
+      description: language === 'en' 
+        ? "Comprehensive bots for large communities with custom features" 
+        : "Bots complets pour grandes communautés avec des fonctionnalités personnalisées",
+      features: [
+        language === 'en' ? "Economy System" : "Système d'économie",
+        language === 'en' ? "Custom Games" : "Jeux personnalisés",
+        language === 'en' ? "Leveling System" : "Système de niveaux",
+        language === 'en' ? "Music Features" : "Fonctionnalités musicales",
+        language === 'en' ? "Advanced Analytics" : "Analyses avancées",
+        language === 'en' ? "Custom Integrations" : "Intégrations personnalisées",
+        language === 'en' ? "50 code revisions" : "50 révisions de code"
+      ],
+      recommended: false
+    }
+  ];
+
   // Extras for each type
   const websiteExtras = [
     language === 'en' ? "Custom Design: +75€" : "Design personnalisé: +75€",
@@ -157,6 +291,20 @@ const Pricing = () => {
     language === 'en' ? "Messaging: +200€" : "Messagerie: +200€",
     language === 'en' ? "App Store/Playstore Publishing: +100€" : "Publication App Store/Playstore: +100€",
     language === 'en' ? "Ongoing Maintenance: +75€/month" : "Maintenance continue: +75€/mois"
+  ];
+
+  const minecraftExtras = [
+    language === 'en' ? "Custom Models: +100€" : "Modèles personnalisés: +100€",
+    language === 'en' ? "Performance Optimization: +75€" : "Optimisation de performance: +75€",
+    language === 'en' ? "Cross-Server Support: +120€" : "Support multi-serveurs: +120€",
+    language === 'en' ? "Monthly Updates: +50€/month" : "Mises à jour mensuelles: +50€/mois"
+  ];
+
+  const discordExtras = [
+    language === 'en' ? "Custom Branding: +50€" : "Image de marque personnalisée: +50€",
+    language === 'en' ? "AI Features: +150€" : "Fonctionnalités IA: +150€",
+    language === 'en' ? "24/7 Hosting: +15€/month" : "Hébergement 24/7: +15€/mois",
+    language === 'en' ? "Monthly Updates: +40€/month" : "Mises à jour mensuelles: +40€/mois"
   ];
 
   const PricingCard = ({ plan, index }: { plan: typeof websitePlans[0], index: number }) => {
@@ -240,7 +388,7 @@ const Pricing = () => {
         
         <Tabs defaultValue="websites" onValueChange={setActiveTab} className="w-full">
           <div className="flex justify-center mb-10">
-            <TabsList className="grid w-full max-w-md grid-cols-2">
+            <TabsList className="grid w-full max-w-md grid-cols-2 lg:grid-cols-4">
               <TabsTrigger value="websites" className="flex items-center gap-2">
                 <Globe className="h-4 w-4" />
                 {language === 'en' ? 'Websites' : 'Sites Web'}
@@ -249,10 +397,21 @@ const Pricing = () => {
                 <Smartphone className="h-4 w-4" />
                 {language === 'en' ? 'Mobile Apps' : 'Applications Mobiles'}
               </TabsTrigger>
+              <TabsTrigger value="minecraft" className="flex items-center gap-2">
+                <Gamepad2 className="h-4 w-4" />
+                {language === 'en' ? 'Minecraft Plugins' : 'Plugins Minecraft'}
+              </TabsTrigger>
+              <TabsTrigger value="discord" className="flex items-center gap-2">
+                <Bot className="h-4 w-4" />
+                {language === 'en' ? 'Discord Bots' : 'Bots Discord'}
+              </TabsTrigger>
             </TabsList>
           </div>
           
-          <TabsContent value="websites" className="mt-0">
+          <TabsContent 
+            value="websites" 
+            className="mt-0 transition-all duration-500 transform"
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {websitePlans.map((plan, index) => (
                 <PricingCard key={index} plan={plan} index={index} />
@@ -264,7 +423,10 @@ const Pricing = () => {
             />
           </TabsContent>
           
-          <TabsContent value="apps" className="mt-0">
+          <TabsContent 
+            value="apps" 
+            className="mt-0 transition-all duration-500 transform"
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {appPlans.map((plan, index) => (
                 <PricingCard key={index} plan={plan} index={index} />
@@ -273,6 +435,36 @@ const Pricing = () => {
             <ExtrasSection 
               extras={appExtras} 
               title={language === 'en' ? 'Mobile App Extras' : 'Options Supplémentaires'}
+            />
+          </TabsContent>
+
+          <TabsContent 
+            value="minecraft" 
+            className="mt-0 transition-all duration-500 transform"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {minecraftPlans.map((plan, index) => (
+                <PricingCard key={index} plan={plan} index={index} />
+              ))}
+            </div>
+            <ExtrasSection 
+              extras={minecraftExtras} 
+              title={language === 'en' ? 'Minecraft Plugin Extras' : 'Options Supplémentaires'}
+            />
+          </TabsContent>
+
+          <TabsContent 
+            value="discord" 
+            className="mt-0 transition-all duration-500 transform"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {discordPlans.map((plan, index) => (
+                <PricingCard key={index} plan={plan} index={index} />
+              ))}
+            </div>
+            <ExtrasSection 
+              extras={discordExtras} 
+              title={language === 'en' ? 'Discord Bot Extras' : 'Options Supplémentaires'}
             />
           </TabsContent>
         </Tabs>
