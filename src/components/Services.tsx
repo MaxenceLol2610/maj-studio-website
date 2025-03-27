@@ -2,36 +2,42 @@
 import React from 'react';
 import { Code, Server, Bot, Layers, ArrowRight, Cpu } from 'lucide-react';
 import { useLanguage } from '@/providers/LanguageProvider';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   const { t, language } = useLanguage();
   
   const services = [
     {
+      id: 'web',
       icon: <Code className="w-10 h-10 text-primary" />,
       title: t('services.web.title'),
       description: t('services.web.description'),
       features: ["React", "Vue.js", "WordPress", "E-commerce"]
     },
     {
+      id: 'software',
       icon: <Server className="w-10 h-10 text-primary" />,
       title: t('services.software.title'),
       description: t('services.software.description'),
       features: ["Windows", "MacOS", "Linux", "Multi-plateforme"]
     },
     {
+      id: 'discord',
       icon: <Bot className="w-10 h-10 text-primary" />,
       title: t('services.discord.title'),
       description: t('services.discord.description'),
       features: ["Modération", "Economie", "Jeux", "Statistiques"]
     },
     {
+      id: 'minecraft',
       icon: <Cpu className="w-10 h-10 text-primary" />,
       title: t('services.minecraft.title'),
       description: t('services.minecraft.description'),
       features: ["Spigot", "Paper", "BungeeCord", "JDA"]
     },
     {
+      id: 'mobile',
       icon: <Layers className="w-10 h-10 text-primary" />,
       title: t('services.mobile.title'),
       description: t('services.mobile.description'),
@@ -62,13 +68,13 @@ const Services = () => {
           ))}
         </div>
         
-        <a 
-          href="#contact" 
+        <Link 
+          to={`/service/${service.id}`} 
           className="text-primary font-medium flex items-center group"
         >
           {t('services.learn_more')}
           <ArrowRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
-        </a>
+        </Link>
       </div>
     );
   };

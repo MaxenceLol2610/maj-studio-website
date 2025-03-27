@@ -7,6 +7,20 @@ import { useLanguage } from '@/providers/LanguageProvider';
 const Privacy = () => {
   const { language } = useLanguage();
   
+  // Remove the hash fragment when navigating to these pages
+  React.useEffect(() => {
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = link.getAttribute('href');
+        if (target) {
+          window.location.href = `/${target}`;
+        }
+      });
+    });
+  }, []);
+  
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
