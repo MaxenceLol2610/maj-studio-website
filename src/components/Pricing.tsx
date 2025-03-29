@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { CheckCircle, Globe, Smartphone } from 'lucide-react';
+import { CheckCircle, Globe, Smartphone, Bot, Gamepad2 } from 'lucide-react';
 import { useLanguage } from '@/providers/LanguageProvider';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -144,6 +143,138 @@ const Pricing = () => {
     }
   ];
 
+  // Discord Bot pricing plans
+  const discordBotPlans = [
+    {
+      name: language === 'en' ? "Basic Bot" : "Bot Discord Basic",
+      price: "35€",
+      description: language === 'en' 
+        ? "Simple Discord bots with basic functionality" 
+        : "Bots Discord simples avec des fonctionnalités basiques",
+      features: [
+        language === 'en' ? "Basic Commands (Ping, info, help)" : "Commandes basiques (Ping, info, help)",
+        language === 'en' ? "Auto-moderation (kick, ban, warn)" : "Auto-modération (kick, ban, warn)",
+        language === 'en' ? "Basic embeds" : "Embeds basiques",
+        language === 'en' ? "Logging" : "Journalisation",
+        language === 'en' ? "1 code revision" : "1 révision de code"
+      ],
+      recommended: false
+    },
+    {
+      name: language === 'en' ? "Standard Bot" : "Bot Discord Standard",
+      price: "120€",
+      description: language === 'en' 
+        ? "Advanced Discord bots with more features" 
+        : "Bots Discord avancés avec plus de fonctionnalités",
+      features: [
+        language === 'en' ? "10+ Commands" : "10+ Commandes",
+        language === 'en' ? "API Integration" : "Intégration API",
+        language === 'en' ? "Basic Database" : "Base de données basique",
+        language === 'en' ? "Custom prefixes" : "Préfixes personnalisés",
+        language === 'en' ? "Settings" : "Paramètres",
+        language === 'en' ? "3 code revisions" : "3 révisions de code"
+      ],
+      recommended: true
+    },
+    {
+      name: language === 'en' ? "Advanced Bot" : "Bot Discord Avancé",
+      price: "310€",
+      description: language === 'en' 
+        ? "Feature-rich Discord bots with advanced functionality" 
+        : "Bots Discord riches en fonctionnalités avec des fonctionnalités avancées",
+      features: [
+        language === 'en' ? "Economy System" : "Système d'économie",
+        language === 'en' ? "Advanced moderation (Anti-spam, AI moderation...)" : "Modération avancée (Anti-spam, modération IA...)",
+        language === 'en' ? "Web Dashboard" : "Tableau de bord Web",
+        language === 'en' ? "Multi-server support" : "Support multi-serveurs",
+        language === 'en' ? "10 code revisions" : "10 révisions de code",
+        language === 'en' ? "Hosting (1 year)" : "Hébergement (1 an)"
+      ],
+      recommended: false
+    },
+    {
+      name: language === 'en' ? "Enterprise Bot" : "Bot Discord Entreprise",
+      price: "850€",
+      description: language === 'en' 
+        ? "Tailor-made Discord bots for complex server needs" 
+        : "Bots Discord sur mesure pour des besoins serveurs complexes",
+      features: [
+        language === 'en' ? "AI-Powered Chats" : "Chats alimentés par l'IA",
+        language === 'en' ? "Full Web Dashboard with Analytics" : "Tableau de bord Web complet avec analytiques",
+        language === 'en' ? "Advanced API integration" : "Intégration API avancée",
+        language === 'en' ? "Unlimited Commands" : "Commandes illimitées",
+        language === 'en' ? "50 code revisions" : "50 révisions de code",
+        language === 'en' ? "Hosting (2 years)" : "Hébergement (2 ans)"
+      ],
+      recommended: false
+    }
+  ];
+
+  // Minecraft Plugin pricing plans
+  const minecraftPluginPlans = [
+    {
+      name: language === 'en' ? "Basic Plugin" : "Plugin Minecraft Basic",
+      price: "40€",
+      description: language === 'en' 
+        ? "Simple Minecraft plugins with basic functionality" 
+        : "Plugins Minecraft simples avec des fonctionnalités basiques",
+      features: [
+        language === 'en' ? "1-5 Commands" : "1-5 Commandes",
+        language === 'en' ? "Basic Mechanics (teleports, messages, item effects)" : "Mécaniques basiques (téléportations, messages, effets d'objets)",
+        language === 'en' ? "Lightweight & Optimized" : "Léger et optimisé",
+        language === 'en' ? "1 code revision" : "1 révision de code"
+      ],
+      recommended: false
+    },
+    {
+      name: language === 'en' ? "Standard Plugin" : "Plugin Minecraft Standard",
+      price: "150€",
+      description: language === 'en' 
+        ? "Advanced Minecraft plugins with more features" 
+        : "Plugins Minecraft avancés avec plus de fonctionnalités",
+      features: [
+        language === 'en' ? "5-15 Commands" : "5-15 Commandes",
+        language === 'en' ? "Configurable (YAML/JSON support)" : "Configurable (support YAML/JSON)",
+        language === 'en' ? "Economy or Scoreboard Integration" : "Intégration économie ou tableau de score",
+        language === 'en' ? "Multi-World Support" : "Support multi-mondes",
+        language === 'en' ? "3 code revisions" : "3 révisions de code"
+      ],
+      recommended: true
+    },
+    {
+      name: language === 'en' ? "Advanced Plugin" : "Plugin Minecraft Avancé",
+      price: "350€",
+      description: language === 'en' 
+        ? "Feature-rich Minecraft plugins with advanced functionality" 
+        : "Plugins Minecraft riches en fonctionnalités avec des fonctionnalités avancées",
+      features: [
+        language === 'en' ? "Minigames or Custom Gameplay Mechanics" : "Mini-jeux ou mécaniques de jeu personnalisées",
+        language === 'en' ? "Custom GUI Menus & Interactions" : "Menus GUI personnalisés et interactions",
+        language === 'en' ? "MySQL / Database Support for Player Stats" : "Support MySQL / Base de données pour les statistiques des joueurs",
+        language === 'en' ? "PlaceholderAPI & Plugin Compatibility" : "Compatibilité PlaceholderAPI et autres plugins",
+        language === 'en' ? "10 code revisions" : "10 révisions de code",
+        language === 'en' ? "Hosting (1 year)" : "Hébergement (1 an)"
+      ],
+      recommended: false
+    },
+    {
+      name: language === 'en' ? "Enterprise Plugin" : "Plugin Minecraft Entreprise",
+      price: "900€",
+      description: language === 'en' 
+        ? "Tailor-made Minecraft plugins for complex server needs" 
+        : "Plugins Minecraft sur mesure pour des besoins serveurs complexes",
+      features: [
+        language === 'en' ? "Complex Game Modes (UHC, MMORPG, Skyblock, etc.)" : "Modes de jeu complexes (UHC, MMORPG, Skyblock, etc.)",
+        language === 'en' ? "Multi-Server Support (BungeeCord/Velocity)" : "Support multi-serveurs (BungeeCord/Velocity)",
+        language === 'en' ? "AI-Driven Features (NPCs, AI Bots)" : "Fonctionnalités basées sur l'IA (PNJ, Bots IA)",
+        language === 'en' ? "Web Dashboard for Managing Plugin Settings" : "Tableau de bord Web pour gérer les paramètres du plugin",
+        language === 'en' ? "50 code revisions" : "50 révisions de code",
+        language === 'en' ? "Hosting (2 years)" : "Hébergement (2 ans)"
+      ],
+      recommended: false
+    }
+  ];
+
   // Extras for each type
   const websiteExtras = [
     language === 'en' ? "Custom Design: +75€" : "Design personnalisé: +75€",
@@ -157,6 +288,20 @@ const Pricing = () => {
     language === 'en' ? "Messaging: +200€" : "Messagerie: +200€",
     language === 'en' ? "App Store/Playstore Publishing: +100€" : "Publication App Store/Playstore: +100€",
     language === 'en' ? "Ongoing Maintenance: +75€/month" : "Maintenance continue: +75€/mois"
+  ];
+
+  const discordBotExtras = [
+    language === 'en' ? "Custom Voice Commands: +50€" : "Commandes vocales personnalisées: +50€",
+    language === 'en' ? "Database Integration: +70€" : "Intégration base de données: +70€",
+    language === 'en' ? "Advanced Analytics: +120€" : "Analytiques avancées: +120€",
+    language === 'en' ? "Ongoing Maintenance: +30€/month" : "Maintenance continue: +30€/mois"
+  ];
+
+  const minecraftPluginExtras = [
+    language === 'en' ? "Custom Models & Textures: +80€" : "Modèles et textures personnalisés: +80€",
+    language === 'en' ? "Performance Optimization: +60€" : "Optimisation des performances: +60€",
+    language === 'en' ? "Server Integration Setup: +90€" : "Configuration de l'intégration serveur: +90€",
+    language === 'en' ? "Ongoing Maintenance: +40€/month" : "Maintenance continue: +40€/mois"
   ];
 
   const PricingCard = ({ plan, index }: { plan: typeof websitePlans[0], index: number }) => {
@@ -240,19 +385,27 @@ const Pricing = () => {
         
         <Tabs defaultValue="websites" onValueChange={setActiveTab} className="w-full">
           <div className="flex justify-center mb-10">
-            <TabsList className="grid w-full max-w-md grid-cols-2">
-              <TabsTrigger value="websites" className="flex items-center gap-2">
+            <TabsList className="grid w-full max-w-md grid-cols-2 sm:grid-cols-4 sm:max-w-2xl">
+              <TabsTrigger value="websites" className="flex items-center gap-2 text-xs sm:text-sm">
                 <Globe className="h-4 w-4" />
                 {language === 'en' ? 'Websites' : 'Sites Web'}
               </TabsTrigger>
-              <TabsTrigger value="apps" className="flex items-center gap-2">
+              <TabsTrigger value="apps" className="flex items-center gap-2 text-xs sm:text-sm">
                 <Smartphone className="h-4 w-4" />
                 {language === 'en' ? 'Mobile Apps' : 'Applications Mobiles'}
+              </TabsTrigger>
+              <TabsTrigger value="discord" className="flex items-center gap-2 text-xs sm:text-sm">
+                <Bot className="h-4 w-4" />
+                {language === 'en' ? 'Discord Bots' : 'Bots Discord'}
+              </TabsTrigger>
+              <TabsTrigger value="minecraft" className="flex items-center gap-2 text-xs sm:text-sm">
+                <Gamepad2 className="h-4 w-4" />
+                {language === 'en' ? 'Minecraft Plugins' : 'Plugins Minecraft'}
               </TabsTrigger>
             </TabsList>
           </div>
           
-          <TabsContent value="websites" className="mt-0">
+          <TabsContent value="websites" className="mt-0 transition-all duration-300">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {websitePlans.map((plan, index) => (
                 <PricingCard key={index} plan={plan} index={index} />
@@ -264,7 +417,7 @@ const Pricing = () => {
             />
           </TabsContent>
           
-          <TabsContent value="apps" className="mt-0">
+          <TabsContent value="apps" className="mt-0 transition-all duration-300">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {appPlans.map((plan, index) => (
                 <PricingCard key={index} plan={plan} index={index} />
@@ -273,6 +426,30 @@ const Pricing = () => {
             <ExtrasSection 
               extras={appExtras} 
               title={language === 'en' ? 'Mobile App Extras' : 'Options Supplémentaires'}
+            />
+          </TabsContent>
+
+          <TabsContent value="discord" className="mt-0 transition-all duration-300">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {discordBotPlans.map((plan, index) => (
+                <PricingCard key={index} plan={plan} index={index} />
+              ))}
+            </div>
+            <ExtrasSection 
+              extras={discordBotExtras} 
+              title={language === 'en' ? 'Discord Bot Extras' : 'Options Supplémentaires'}
+            />
+          </TabsContent>
+
+          <TabsContent value="minecraft" className="mt-0 transition-all duration-300">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {minecraftPluginPlans.map((plan, index) => (
+                <PricingCard key={index} plan={plan} index={index} />
+              ))}
+            </div>
+            <ExtrasSection 
+              extras={minecraftPluginExtras} 
+              title={language === 'en' ? 'Minecraft Plugin Extras' : 'Options Supplémentaires'}
             />
           </TabsContent>
         </Tabs>

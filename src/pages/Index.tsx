@@ -27,7 +27,7 @@ const Index = () => {
     );
 
     // Sélectionner tous les éléments qui doivent avoir une animation
-    const animatedElements = document.querySelectorAll('.card-hover, .glass, [role="tabpanel"] > div > div');
+    const animatedElements = document.querySelectorAll('.card-hover, .glass, [role="tabpanel"] > div > div, .TabsTrigger, .TabsContent');
     animatedElements.forEach((el) => {
       observer.observe(el);
     });
