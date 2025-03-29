@@ -385,20 +385,20 @@ const Pricing = () => {
         
         <Tabs defaultValue="websites" onValueChange={setActiveTab} className="w-full">
           <div className="flex justify-center mb-10">
-            <TabsList className="grid w-full max-w-md grid-cols-2 sm:grid-cols-4 sm:max-w-2xl">
-              <TabsTrigger value="websites" className="flex items-center gap-2 text-xs sm:text-sm px-2 sm:px-3">
+            <TabsList className="grid w-full max-w-md grid-cols-2 sm:grid-cols-4 sm:max-w-2xl bg-muted/70 p-1.5 rounded-lg">
+              <TabsTrigger value="websites" className="flex items-center gap-2 text-xs sm:text-sm px-2 sm:px-3 rounded-md">
                 <Globe className="h-4 w-4" />
                 <span>{language === 'en' ? 'Websites' : 'Sites Web'}</span>
               </TabsTrigger>
-              <TabsTrigger value="apps" className="flex items-center gap-2 text-xs sm:text-sm px-2 sm:px-3">
+              <TabsTrigger value="apps" className="flex items-center gap-2 text-xs sm:text-sm px-2 sm:px-3 rounded-md">
                 <Smartphone className="h-4 w-4" />
                 <span>{language === 'en' ? 'Mobile Apps' : 'Applications Mobiles'}</span>
               </TabsTrigger>
-              <TabsTrigger value="discord" className="flex items-center gap-2 text-xs sm:text-sm px-2 sm:px-3">
+              <TabsTrigger value="discord" className="flex items-center gap-2 text-xs sm:text-sm px-2 sm:px-3 rounded-md">
                 <Bot className="h-4 w-4" />
                 <span>{language === 'en' ? 'Discord Bots' : 'Bots Discord'}</span>
               </TabsTrigger>
-              <TabsTrigger value="minecraft" className="flex items-center gap-2 text-xs sm:text-sm px-2 sm:px-3">
+              <TabsTrigger value="minecraft" className="flex items-center gap-2 text-xs sm:text-sm px-2 sm:px-3 rounded-md">
                 <Gamepad2 className="h-4 w-4" />
                 <span>{language === 'en' ? 'Minecraft Plugins' : 'Plugins Minecraft'}</span>
               </TabsTrigger>

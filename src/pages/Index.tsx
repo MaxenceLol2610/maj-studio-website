@@ -27,7 +27,8 @@ const Index = () => {
     );
 
     // Sélectionner tous les éléments qui doivent avoir une animation
-    const animatedElements = document.querySelectorAll('.card-hover, .glass, [role="tabpanel"] > div > div, .TabsTrigger, .TabsContent, [data-radix-collection-item]');
+    // Excluding TabsTrigger from animations to ensure proper tab styling
+    const animatedElements = document.querySelectorAll('.card-hover, .glass, [role="tabpanel"] > div > div, .TabsContent, [data-radix-collection-item]:not([data-state])');
     animatedElements.forEach((el) => {
       observer.observe(el);
     });
