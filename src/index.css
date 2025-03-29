@@ -244,3 +244,10 @@
     @apply container mx-auto px-6 py-20 md:px-8;
   }
 }
+
+/* Extra small screen utility class */
+@media (min-width: 480px) {
+  .xs\:inline {
+    display: inline;
+  }
+}

@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { CheckCircle, Globe, Smartphone, Bot, Gamepad2 } from 'lucide-react';
 import { useLanguage } from '@/providers/LanguageProvider';
@@ -386,21 +387,21 @@ const Pricing = () => {
         <Tabs defaultValue="websites" onValueChange={setActiveTab} className="w-full">
           <div className="flex justify-center mb-10">
             <TabsList className="grid w-full max-w-md grid-cols-2 sm:grid-cols-4 sm:max-w-2xl">
-              <TabsTrigger value="websites" className="flex items-center gap-2 text-xs sm:text-sm">
+              <TabsTrigger value="websites" className="flex items-center gap-2 text-xs sm:text-sm px-2 sm:px-3 z-10">
                 <Globe className="h-4 w-4" />
-                {language === 'en' ? 'Websites' : 'Sites Web'}
+                <span className="hidden xs:inline">{language === 'en' ? 'Websites' : 'Sites Web'}</span>
               </TabsTrigger>
-              <TabsTrigger value="apps" className="flex items-center gap-2 text-xs sm:text-sm">
+              <TabsTrigger value="apps" className="flex items-center gap-2 text-xs sm:text-sm px-2 sm:px-3 z-10">
                 <Smartphone className="h-4 w-4" />
-                {language === 'en' ? 'Mobile Apps' : 'Applications Mobiles'}
+                <span className="hidden xs:inline">{language === 'en' ? 'Mobile Apps' : 'Applications Mobiles'}</span>
               </TabsTrigger>
-              <TabsTrigger value="discord" className="flex items-center gap-2 text-xs sm:text-sm">
+              <TabsTrigger value="discord" className="flex items-center gap-2 text-xs sm:text-sm px-2 sm:px-3 z-10">
                 <Bot className="h-4 w-4" />
-                {language === 'en' ? 'Discord Bots' : 'Bots Discord'}
+                <span className="hidden xs:inline">{language === 'en' ? 'Discord Bots' : 'Bots Discord'}</span>
               </TabsTrigger>
-              <TabsTrigger value="minecraft" className="flex items-center gap-2 text-xs sm:text-sm">
+              <TabsTrigger value="minecraft" className="flex items-center gap-2 text-xs sm:text-sm px-2 sm:px-3 z-10">
                 <Gamepad2 className="h-4 w-4" />
-                {language === 'en' ? 'Minecraft Plugins' : 'Plugins Minecraft'}
+                <span className="hidden xs:inline">{language === 'en' ? 'Minecraft Plugins' : 'Plugins Minecraft'}</span>
               </TabsTrigger>
             </TabsList>
           </div>
